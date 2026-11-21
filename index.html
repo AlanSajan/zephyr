@@ -50,10 +50,11 @@ h1{font-weight:300;font-size:clamp(34px,6.5vw,78px);line-height:1.04;letter-spac
 .ov p{color:var(--mut);margin:0 0 14px}
 .up{padding:10px 20px;border:1px solid var(--brz);border-radius:999px;background:rgba(211,165,116,.14);transition:.25s}
 .up:hover{background:rgba(211,165,116,.28)}
-#gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:6px}
-.gi{position:relative}
-.gi img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:12px;border:1px solid var(--ln);cursor:zoom-in}
-.gi button{position:absolute;top:6px;right:6px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(0,0,0,.65);font-size:18px;line-height:1}
+#gr{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;max-width:960px;margin:10px auto 0;padding:28px 16px;background:#e3e4e8;border-radius:16px;overflow:hidden}#gr:empty{display:none}
+.gi{position:relative;flex:none;margin:-7px;padding:5px;background:#fff;box-shadow:0 5px 16px rgba(0,0,0,.35);transform:rotate(var(--r,0deg));transition:transform .25s,box-shadow .25s}
+.gi:hover{z-index:30!important;transform:rotate(0deg) scale(1.07);box-shadow:0 10px 28px rgba(0,0,0,.45)}
+.gi img{width:100%;height:auto;display:block;cursor:zoom-in}
+.gi button{position:absolute;top:9px;right:9px;width:26px;height:26px;border-radius:50%;border:0;background:rgba(0,0,0,.55);font-size:17px;line-height:1;color:#fff}.gi button.cf{width:auto;padding:0 10px;border-radius:13px;background:#d6455d;font-size:12px}
 #lb{position:fixed;inset:0;z-index:6;display:none;place-items:center;background:rgba(0,0,0,.92)}
 #lb.on{display:grid}
 #lb img{max-width:94vw;max-height:90vh;border-radius:12px}
@@ -63,7 +64,7 @@ h1{font-weight:300;font-size:clamp(34px,6.5vw,78px);line-height:1.04;letter-spac
 .cd.m{border-color:var(--brz);box-shadow:0 0 14px rgba(211,165,116,.7)}
 #md{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}#md button{border:1px solid var(--ln);background:transparent;border-radius:999px;padding:7px 16px;font-size:14px}#md button[aria-pressed="true"]{background:var(--brz);border-color:var(--brz);color:var(--nv);font-weight:500}#nf{display:flex;gap:8px;margin-bottom:14px;max-width:520px}#nf[hidden],#pw[hidden]{display:none}#pw{display:flex;gap:8px;margin:12px 0 0;max-width:520px}#ni,#pi{flex:1;min-width:0;font:inherit;color:var(--ink);background:rgba(11,20,38,.7);border:1px solid var(--ln);border-radius:999px;padding:9px 16px}#lt{font-weight:300;font-size:22px;margin:22px 0 4px}#lh{font-size:14px;margin:0 0 8px}#ld{list-style:none;padding:0;margin:0;max-width:520px}#ld li{display:grid;grid-template-columns:2em 1fr auto 3.5em;gap:10px;align-items:center;padding:9px 12px;border-bottom:1px solid rgba(211,165,116,.18);color:var(--mut)}#ld .nm{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#ld li:first-child .nm{color:var(--brz)}#ld li span:last-child{text-align:right}#ld .me{background:rgba(211,165,116,.14);border-radius:10px;border-bottom-color:transparent}
 #hud{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}#lv{font-size:20px;font-weight:500;color:var(--brz)}#sco{margin-left:auto;font-size:22px;font-variant-numeric:tabular-nums}#hp{display:flex;gap:3px;flex-wrap:wrap;color:#e0556a;font-size:17px;line-height:1;flex-basis:100%;order:3}#hp i{font-style:normal;transition:.3s}#hp i.x{color:rgba(255,255,255,.18);animation:brk .5s}@keyframes brk{30%{transform:scale(1.9);color:#ff4d6a}100%{transform:scale(1)}}@keyframes fl{from{transform:rotateY(90deg) scale(.9)}to{transform:none}}@keyframes pop{40%{transform:scale(1.14)}}@keyframes shk{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}.cd.f{animation:fl .28s ease-out}.cd.m{animation:pop .5s}.cd.bad{animation:shk .4s;border-color:#e0556a;box-shadow:0 0 14px rgba(224,85,106,.7)}.cd.lost{filter:grayscale(1) brightness(.55);transition:filter .6s}#gm.shake{animation:shk .5s}#bn{position:fixed;inset:0;z-index:7;display:grid;place-content:center;pointer-events:none;text-align:center;font-size:clamp(32px,10vw,72px);font-weight:600;letter-spacing:.04em;text-shadow:0 4px 30px rgba(0,0,0,.8);opacity:0}#bn small{display:block;font-size:.34em;font-weight:400;letter-spacing:.1em;margin-top:6px;color:var(--ink)}#bn.win{color:var(--brz);animation:bnw 2s both}#bn.lose{color:#ff5a72;animation:bnl 2.4s both}@keyframes bnw{0%{opacity:0;transform:scale(.3) rotate(-6deg)}18%{opacity:1;transform:scale(1.15) rotate(2deg)}30%{transform:scale(1)}85%{opacity:1}100%{opacity:0;transform:scale(1.1)}}@keyframes bnl{0%{opacity:0;transform:translateY(-140px)}16%{opacity:1;transform:translateY(0)}22%{transform:translateY(-16px)}28%{transform:translateY(0)}90%{opacity:1}100%{opacity:0}}#fx,#cf{position:fixed;inset:0;z-index:6;pointer-events:none;overflow:hidden}#fx{opacity:0}#cf{z-index:7}#cf b{position:absolute;width:8px;height:12px;border-radius:2px}
-@keyframes gin{from{opacity:0;transform:scale(.8) rotate(-4deg)}}.gi.in{animation:gin .4s ease-out both}
+@keyframes gin{from{opacity:0;transform:scale(.8) rotate(-4deg)}}.gi.in{animation:gin .4s ease-out backwards}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition:none!important}}
 </style>
 </head>
@@ -72,7 +73,7 @@ h1{font-weight:300;font-size:clamp(34px,6.5vw,78px);line-height:1.04;letter-spac
 <div class="pn" id="pn" aria-live="polite"><button class="av empty" id="av" type="button"></button><input type="file" id="fi" accept="image/*" hidden><small id="ct"></small><h2 id="nm"></h2><p class="rl" id="rl"></p><p class="bio" id="bio"></p><div class="ar"><button id="pv" aria-label="Previous member">‹</button><button id="nx" aria-label="Next member">›</button></div></div>
 <div id="chips" role="group" aria-label="Team members"></div>
 <nav id="nav" aria-label="Sections"><button data-k="team">Team</button><button data-k="gal">Gallery</button><button data-k="gm">Game</button></nav>
-<section class="ov" id="gal"><h2>Gallery</h2><p>Add pictures to your own gallery. They are saved on this device only. Adding pictures needs the team password.</p><button class="up" id="ub" type="button">+ Add picture</button> <button class="up" id="sf" type="button">Shuffle</button><div id="pw" hidden><input id="pi" type="password" placeholder="Upload password" aria-label="Upload password" autocomplete="off"><button class="up" id="pb" type="button">Unlock</button></div><input type="file" id="gi" accept="image/*" hidden><p id="gs" aria-live="polite"></p><div id="gr"></div></section>
+<section class="ov" id="gal"><h2>Gallery</h2><p>Add a picture and everyone on the team can see it. Adding or removing pictures needs the team password.</p><button class="up" id="ub" type="button">+ Add picture</button> <button class="up" id="sf" type="button">Shuffle</button><div id="pw" hidden><input id="pi" type="password" placeholder="Upload password" aria-label="Upload password" autocomplete="off"><button class="up" id="pb" type="button">Unlock</button></div><input type="file" id="gi" accept="image/*" hidden><p id="gs" aria-live="polite"></p><div id="gr"></div></section>
 <section class="ov" id="gm"><h2>Match the team</h2><p>Clear levels to rack up points. Each level is harder, and too many wrong flips ends your run.</p><div id="hud"><span id="lv"></span><span id="sco">0</span><span id="hp" aria-label="Lives left"></span></div><p id="ms" aria-live="polite"></p><div id="mg"></div><div id="nf" hidden><input id="ni" maxlength="16" placeholder="Your name" aria-label="Your name" autocomplete="nickname"><button class="up" id="sb" type="button">Save score</button></div><button class="up" id="rs" type="button">Play again</button><h3 id="lt"></h3><p id="lh">One score per player. Highest score wins.</p><ol id="ld"></ol></section>
 <div id="lb"><img id="lbi" alt=""></div><div id="fx"></div><div id="cf"></div><div id="bn" aria-live="assertive"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -109,24 +110,38 @@ NB.forEach(b=>b.onclick=()=>show(b.dataset.k));show("team");
 lb.onclick=()=>lb.classList.remove("on");addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("on")});
 let gdb=null,uid="",gal=[],loc=(()=>{try{return JSON.parse(localStorage.getItem("zephyr-gallery")||"[]")}catch(e){return[]}})(),sv=()=>{try{localStorage.setItem("zephyr-gallery",JSON.stringify(loc));return true}catch(e){return false}};const gr=$("#gr"),gs=$("#gs"),gi=$("#gi");
 const rk=new Map(),pk=p=>p.id||p.img.length+p.img.slice(-48);let anim=false;
-function shuf(){rk.clear();anim=true;rg()}
-function rg(){const l=(gdb?gal:loc).slice();l.forEach(p=>{if(!rk.has(pk(p)))rk.set(pk(p),Math.random())});l.sort((a,b)=>rk.get(pk(a))-rk.get(pk(b)));gr.innerHTML="";gs.textContent=l.length?l.length+(l.length>1?" pictures":" picture"):"No pictures yet. Be the first to add one!";
-l.forEach((p,i)=>{const w=document.createElement("div"),m=new Image();w.className=anim?"gi in":"gi";w.style.animationDelay=Math.min(i,24)*30+"ms";m.src=p.img;m.alt="Team picture";m.onclick=()=>{$("#lbi").src=p.img;lb.classList.add("on")};w.appendChild(m);
-if(!gdb||(p.id&&p.by&&p.by===uid)){const x=document.createElement("button");x.textContent="×";x.setAttribute("aria-label","Delete my picture");x.onclick=()=>{if(gdb)gdb.collection("gallery").doc(p.id).delete().catch(()=>{});else{loc.splice(loc.indexOf(p),1);sv();rg()}};w.appendChild(x)}gr.appendChild(w)});anim=false}
-(async()=>{try{gdb=await claude.use("db");const u=await claude.use("user");uid=u?await u.id():""}catch(e){gdb=null}
+const lay=new Map();function shuf(){rk.clear();lay.clear();anim=true;rg()}
+function rg(){const l=(gdb?gal:loc).slice();l.forEach(p=>{if(!rk.has(pk(p)))rk.set(pk(p),Math.random())});l.sort((a,b)=>rk.get(pk(a))-rk.get(pk(b)));gr.innerHTML="";
+gs.textContent=l.length?l.length+(l.length>1?" pictures":" picture"):"No pictures yet. Be the first to add one!";
+l.forEach((p,i)=>{const k=pk(p);if(!lay.has(k))lay.set(k,{r:Math.random()*16-8,w:Math.round(85+Math.random()*75),z:1+Math.floor(Math.random()*9)});
+const y=lay.get(k),w=document.createElement("div"),m=new Image(),x=document.createElement("button");
+w.className=anim?"gi in":"gi";w.style.cssText="--r:"+y.r+"deg;width:"+y.w+"px;z-index:"+y.z+";animation-delay:"+Math.min(i,24)*30+"ms";
+m.onload=()=>{const q=m.naturalWidth/m.naturalHeight;m.style.aspectRatio=Math.min(1.4,Math.max(.7,q));m.style.objectFit="cover"};m.src=p.img;m.alt="Team picture";m.onclick=()=>{$("#lbi").src=p.img;lb.classList.add("on")};
+x.textContent="\u00d7";x.setAttribute("aria-label","Remove picture");
+x.onclick=ev=>{ev.stopPropagation();
+const del=()=>{if(gdb&&p.id)gdb.collection("gallery").doc(p.id).delete().catch(()=>{});else{loc.splice(loc.indexOf(p),1);typeof sv==="function"&&sv();rg()}};
+if(!unl()){pend=del;pw.hidden=false;pi.focus();gs.textContent="Enter the password to remove pictures.";return}
+if(x.dataset.c)del();else{x.dataset.c=1;x.textContent="Delete?";x.className="cf";setTimeout(()=>{x.dataset.c="";x.textContent="\u00d7";x.className=""},3000)}};
+w.appendChild(m);w.appendChild(x);gr.appendChild(w)});anim=false}
+const FB={apiKey:"AIzaSyCY1gQH9MY6x2UJEyuxKYb47Gi8HgNsuSE",authDomain:"zephyr-aaa81.firebaseapp.com",projectId:"zephyr-aaa81",storageBucket:"zephyr-aaa81.firebasestorage.app",messagingSenderId:"762241932895",appId:"1:762241932895:web:63de9358d9ab92f626c5ea"};
+async function fbInit(){const V="https://www.gstatic.com/firebasejs/10.12.2/",A=await import(V+"firebase-app.js"),F=await import(V+"firebase-firestore.js"),db=F.getFirestore(A.initializeApp(FB));
+return{collection:n=>{const c=F.collection(db,n);let q=c;const o={orderBy:(f,d)=>{q=F.query(q,F.orderBy(f,d));return o},limit:k=>{q=F.query(q,F.limit(k));return o},
+onSnapshot:(ok,er)=>F.onSnapshot(q,s=>ok({docs:s.docs}),er),add:x=>F.addDoc(c,x),doc:id=>({delete:()=>F.deleteDoc(F.doc(db,n,id))})};return o},
+doc:p=>{const[a,b]=p.split("/");return{set:x=>F.setDoc(F.doc(db,a,b),x)}}}}
+(async()=>{try{gdb=await Promise.race([fbInit(),new Promise((_,j)=>setTimeout(j,8000))])}catch(e){gdb=null}
 if(gdb)gdb.collection("gallery").orderBy("t","desc").limit(60).onSnapshot(s=>{gal=s.docs.map(d=>({id:d.id,...d.data()})).filter(p=>typeof p.img==="string"&&p.img.startsWith("data:image/jpeg;base64,"));rg()},()=>{gs.textContent="The gallery couldn’t be loaded."});subSc();rg()})();
 const h53=s=>{let a=3735928559,b=1103547991;for(let i=0;i<s.length;i++){const c=s.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677)}a=Math.imul(a^(a>>>16),2246822507)^Math.imul(b^(b>>>13),3266489909);b=Math.imul(b^(b>>>16),2246822507)^Math.imul(a^(a>>>13),3266489909);return(4294967296*(2097151&b)+(a>>>0)).toString(36)},
-PW="2fjy25lv414",pw=$("#pw"),pi=$("#pi");let okpw=false;
+PW="2fjy25lv414",pw=$("#pw"),pi=$("#pi");let okpw=false,pend=null;
 const unl=()=>{try{if(localStorage.getItem("zephyr-up")===PW)return true}catch(e){}return okpw};
-$("#ub").onclick=()=>{if(unl())gi.click();else{pw.hidden=false;pi.focus()}};
-$("#pb").onclick=()=>{if(h53("zephyr:"+pi.value.trim().toLowerCase())===PW){okpw=true;try{localStorage.setItem("zephyr-up",PW)}catch(e){}pi.value="";pw.hidden=true;gs.textContent="";gi.click()}else{pi.value="";gs.textContent="Wrong password. Try again.";pi.focus()}};
+$("#ub").onclick=()=>{pend=null;if(unl())gi.click();else{pw.hidden=false;pi.focus()}};
+$("#pb").onclick=()=>{if(h53("zephyr:"+pi.value.trim().toLowerCase())===PW){okpw=true;try{localStorage.setItem("zephyr-up",PW)}catch(e){}pi.value="";pw.hidden=true;gs.textContent="";if(pend){const f=pend;pend=null;f()}else gi.click()}else{pi.value="";gs.textContent="Wrong password. Try again.";pi.focus()}};
 pi.onkeydown=e=>{if(e.key==="Enter")$("#pb").click()};$("#sf").onclick=shuf;
 gi.onchange=async()=>{const f=gi.files[0];gi.value="";if(!f||!unl())return;
 const m=await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>ok(i);i.onerror=no;i.src=r.result};r.onerror=no;r.readAsDataURL(f)}).catch(()=>null);
 if(!m){gs.textContent="That file couldn’t be read as a picture.";return}
 const k=Math.min(1,480/Math.max(m.width,m.height)),c=document.createElement("canvas");c.width=Math.round(m.width*k);c.height=Math.round(m.height*k);c.getContext("2d").drawImage(m,0,0,c.width,c.height);
 const d=c.toDataURL("image/jpeg",.72);
-if(gdb){try{await gdb.collection("gallery").add({img:d,t:Date.now(),by:uid})}catch(e){gs.textContent="The picture couldn’t be added. You may need contributor access."}}else{loc.unshift({img:d});const ok=sv();rg();if(!ok)gs.textContent="Added for now, but this device has no space to keep it."}};
+if(gdb){try{await gdb.collection("gallery").add({img:d,t:Date.now(),by:uid})}catch(e){gs.textContent="The picture couldn’t be added. Check your connection and try again."}}else{loc.unshift({img:d});const ok=sv();rg();if(!ok)gs.textContent="Added for now, but this device has no space to keep it."}};
 const key=r=>[...new TextEncoder().encode(r.n.trim().toLowerCase())].map(b=>b.toString(16).padStart(2,"0")).join(""),
 better=(a,b)=>a.sc>b.sc||(a.sc===b.sc&&a.lv>b.lv),
 dd=a=>{const m={};a.forEach(r=>{const k=key(r);if(!m[k]||better(r,m[k]))m[k]=r});return Object.values(m)},
@@ -136,7 +151,7 @@ cfg=n=>{const t=Math.min(n,4);return{p:[4,6,8,10][t-1],c:t<4?4:5,hp:3*t,rv:n<=4?
 let lvl=1,pts=0,wr=0,fl=[],mt=0,lk=false,t0=0,tm=0,rid=0,sc=[],done=null,lsc=dd([].concat((()=>{try{return JSON.parse(localStorage.getItem("zephyr-scores2")||"[]")}catch(e){return[]}})()||[]).filter(okr));
 const mg=$("#mg"),ms=$("#ms"),ni=$("#ni"),nf=$("#nf"),ld=$("#ld"),src=i=>ph(i)||T[i][3];
 function subSc(){if(gdb)gdb.collection("scores").orderBy("t","desc").limit(300).onSnapshot(s=>{sc=s.docs.map(d=>d.data()).filter(okr);rl()},()=>{})}
-function rl(){const me=myName(),l=dd(sc.concat(lsc)).sort((a,b)=>b.sc-a.sc||b.lv-a.lv).slice(0,10);
+function rl(){const me=myName(),l=dd(gdb?sc:lsc).sort((a,b)=>b.sc-a.sc||b.lv-a.lv).slice(0,10);
 $("#lt").textContent="Leaderboard";ld.innerHTML="";
 if(!l.length){const li=document.createElement("li");li.textContent="No scores yet. Be the first!";ld.appendChild(li);return}
 l.forEach((r,i)=>{const li=document.createElement("li");if(r.n.trim().toLowerCase()===me)li.className="me";
@@ -171,12 +186,12 @@ if(pts>0){done={sc:pts,lv:lvl};ms.textContent="Enter your name to save your scor
 else ms.textContent="Clear a level to get on the leaderboard. Try again!"}
 $("#sb").onclick=async()=>{if(!done)return;const n=ni.value.trim().slice(0,16);if(!n){ni.focus();return}
 try{localStorage.setItem("zephyr-name",n)}catch(e){}
-const r={n,sc:done.sc,lv:done.lv,t:Date.now()},k=key(r),cur=dd(sc.concat(lsc)).find(x=>key(x)===k);done=null;nf.hidden=true;
+const r={n,sc:done.sc,lv:done.lv,t:Date.now()},k=key(r),cur=dd(gdb?sc:lsc).find(x=>key(x)===k);done=null;nf.hidden=true;
 if(cur&&!better(r,cur)){ms.textContent="Not a new best. Your best is "+cur.sc+" points (level "+cur.lv+").";rl();return}
 let ok=false;if(gdb){try{await gdb.doc("scores/"+k).set(r);ok=true}catch(e){}}
-lsc=lsc.filter(x=>key(x)!==k);if(!ok)lsc.push(r);try{localStorage.setItem("zephyr-scores2",JSON.stringify(lsc))}catch(e){}
+lsc=lsc.filter(x=>key(x)!==k);if(!ok&&!gdb)lsc.push(r);try{localStorage.setItem("zephyr-scores2",JSON.stringify(lsc))}catch(e){}
 sc=sc.filter(x=>key(x)!==k);if(ok)sc.push(r);
-ms.textContent=(cur?"New personal best! ":"Score added! ")+(ok?"It is on the leaderboard.":"Saved on this device.");burst();rl()};
+ms.textContent=(cur?"New personal best! ":"Score added! ")+(ok?"It is on the leaderboard.":gdb?"Couldn\u2019t reach the shared leaderboard. Try again.":"Saved on this device.");burst();rl()};
 $("#rs").onclick=newGame;
 go(0);
 try{
